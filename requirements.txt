@@ -1,0 +1,9 @@
+streamlit
+python-dotenv
+PyPDF2
+python-docx
+pandas
+sentence-transformers
+faiss-cpu # Use faiss-gpu if you have a compatible GPU and CUDA installed
+google-generativeai
+langchain-text-splitters
