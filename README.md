@@ -1,13 +1,17 @@
-# 📄 🤖 RAG Q&A Chatbot for Loan Approval Dataset
+# 📄🤖 RAG Q&A Chatbot for Loan Approval Dataset
+
+**Deployed Chatbot:** [RAG Q&A Chatbot](https://rag-qna-chatbot-csi.streamlit.app/)
 
 A Retrieval-Augmented Generation (RAG) based chatbot powered by Google Gemini, designed for intelligent Q&A over uploaded documents. The app supports various file formats and provides context-aware responses using the Gemini large language model.
 
+
+> 📌 **Note**: This project was developed as part of the **Week 8 Assignment** in the **Celebal Summer Internship** program.
 ---
 
 **Dataset Resource**: [Kaggle - Loan Approval Prediction](https://www.kaggle.com/datasets/sonalisingh1411/loan-approval-prediction?select=Training+Dataset.csv)
 
 
-> 📌 **Note**: This project was developed as part of the **Week 8 Assignment** in the **Celebal Summer Internship** program.
+
 
 ---
 
@@ -17,7 +21,7 @@ A Retrieval-Augmented Generation (RAG) based chatbot powered by Google Gemini, d
 
 ### OR 
 
-> [▶️ Watch Demo Video](https://youtu.be/1pLQIomZRI8)
+> [▶️ Watch Demo Video](https://youtu.be/1pLQIomZRI8) - to know how to use chatbot.
 
 
 
