@@ -124,11 +124,11 @@ Once the app launches in your browser, you can:
 
 > _Add screenshots of the Streamlit interface and output here.
 
-![Homepage Screenshot](visualizations\brief_explanation.png)
+![Homepage Screenshot](visualizations/brief_explanation.png)
 *Figure 1: 🧾 The chatbot explains the structure of the uploaded loan dataset, listing all features such as Loan ID, Gender, ApplicantIncome, and more in response to a user query.*
 
 ---
-![Homepage Screenshot](visualizations\imp_factor.png)
+![Homepage Screenshot](visualizations/imp_factor.png)
 *Figure 2: ✅ The chatbot identifies key factors influencing loan approval—highlighting Credit_History and Loan_Status—based on analysis of the dataset.*
 
 ---
