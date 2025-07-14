@@ -9,6 +9,12 @@ A Retrieval-Augmented Generation (RAG) based chatbot powered by Google Gemini, d
 
 > 📌 **Note**: This project was developed as part of the **Week 8 Assignment** in the **Celebal Summer Internship** program.
 
+---
+
+## 🎥 Demo – Chatbot Screen Recording
+
+> [Download or View Chatbot Demo (MP4)](demo/chatbot_demo.mp4)
+
 ## 🚀 Features
 
 - **Modular Design**: Clean, maintainable code organized into distinct modules:
@@ -109,26 +115,16 @@ Once the app launches in your browser, you can:
 
 ---
 
-## 🎥 Demo – Chatbot Screen Recording
-
-> _📽️ Add your screen recording or video demo below:_  
-> 
-> ![Chatbot Demo](demo/chatbot_demo.gif)  
-> 
-> Or link to a YouTube/Drive video:  
-> [▶️ Watch Demo Video](https://www.youtube.com/watch?v=your-demo-link)
-
----
 
 ## 📸 UI Preview
 
 > _Add screenshots of the Streamlit interface and output here.
 
-![Homepage Screenshot](visualizations/brief_explanation.png)
+![Homepage Screenshot](demo/brief_explanation.png)
 *Figure 1: 🧾 The chatbot explains the structure of the uploaded loan dataset, listing all features such as Loan ID, Gender, ApplicantIncome, and more in response to a user query.*
 
 ---
-![Homepage Screenshot](visualizations/imp_factor.png)
+![Homepage Screenshot](demo/imp_factor.png)
 *Figure 2: ✅ The chatbot identifies key factors influencing loan approval—highlighting Credit_History and Loan_Status—based on analysis of the dataset.*
 
 ---
