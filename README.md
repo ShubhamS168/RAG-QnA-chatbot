@@ -43,16 +43,32 @@ A Retrieval-Augmented Generation (RAG) based chatbot powered by Google Gemini, d
 ## 📁 Project Structure
 
 ```
-RAG-QnA-chatbot/
+RAG-QnA-Chatbot/
 │
-├── .env                   # Stores your Gemini API key
-├── .gitignore             # Prevents sensitive or unnecessary files from being committed
-├── config.py              # API key and config loading
-├── utils.py               # File reading, cleaning, and text chunking
-├── retriever.py           # Embedding and FAISS-based retrieval
-├── gemini_qa.py           # Generates answers using Gemini API
-├── streamlit_app.py       # Streamlit app interface
-├── requirements.txt       # All required Python dependencies
+├── .env                # Stores your Gemini API key
+├── .gitignore          # Prevents sensitive or unnecessary files from being committed
+├── config.py           # Configuration file for environment variables
+├── utils.py            # File reading, text preprocessing, and chunking
+├── retriever.py        # Embedding generation and FAISS-based context retrieval
+├── gemini_qa.py        # Interacts with Google Gemini API for answer generation
+├── streamlit_app.py    # Main Streamlit frontend app
+├── requirements.txt    # All required Python dependencies
+├── README.md           # Project overview and setup guide
+│
+├── data/               # Sample input files for testing the chatbot
+│ ├── Sample_Submission.csv
+│ ├── Test Dataset.csv
+│ └── Training Dataset.csv
+│
+├── demo/               # Screenshots and demo video for the chatbot
+│ ├── brief_explanation.png
+│ ├── imp_factor.png
+│ └── chatbot_demo.mp4
+│
+├── .streamlit/         # Streamlit configuration (optional)
+│ └── config.toml
+│
+└── pycache/            # Auto-generated Python cache files (ignored in Git)
 ```
 
 ---
