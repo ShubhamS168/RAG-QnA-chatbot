@@ -15,6 +15,12 @@ A Retrieval-Augmented Generation (RAG) based chatbot powered by Google Gemini, d
 
 > [Download or View Chatbot Demo (MP4)](demo/chatbot_demo.mp4)
 
+### OR 
+
+> [▶️ Watch Demo Video](https://youtu.be/1pLQIomZRI8)
+
+
+
 ## 🚀 Features
 
 - **Modular Design**: Clean, maintainable code organized into distinct modules:
