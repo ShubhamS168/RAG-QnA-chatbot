@@ -53,8 +53,7 @@ RAG-QnA-chatbot/
 ### 1. Clone the Repo & Navigate to Directory
 
 ```bash
-git clone https://github.com/yourusername/rag-gemini-chatbot.git
-cd rag-gemini-chatbot
+git clone https://github.com/ShubhamS168/RAG-QnA-chatbot.git
 ```
 
 ### 2. Create and Configure `.env`
