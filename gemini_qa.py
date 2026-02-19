@@ -126,12 +126,28 @@ Answer:
 """
 
         try:
+            # response = self.client.models.generate_content(
+            #     model="gemini-1.5-flash",
+            #     contents=full_prompt
+            # )
+            # return response.text
             response = self.client.models.generate_content(
                 model="gemini-1.5-flash",
                 contents=full_prompt
             )
-            return response.text
+
+            if hasattr(response, "text") and response.text:
+                return response.text
+
+            # Fallback for new response structure
+            return response.candidates[0].content.parts[0].text
+
 
         except Exception as e:
-            print(f"Error generating answer with Gemini: {e}")
-            return "An error occurred while generating the answer. Please try again."
+            # print(f"Error generating answer with Gemini: {e}")
+            # return "An error occurred while generating the answer. Please try again."
+            
+            import traceback
+            error_details = traceback.format_exc()
+            return f"❌ Gemini error:\n{error_details}"
+
