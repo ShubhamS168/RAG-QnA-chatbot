@@ -131,10 +131,10 @@ Answer:
             #     contents=full_prompt
             # )
             # return response.text
+            
             response = self.client.models.generate_content(
-                # model="gemini-1.5-flash",
-                model="gemini-1.0-pro",
-                contents=full_prompt
+                model="models/gemini-pro",
+                contents=[full_prompt]
             )
 
             if hasattr(response, "text") and response.text:
