@@ -5,5 +5,6 @@ python-docx
 pandas
 sentence-transformers
 faiss-cpu # Use faiss-gpu if you have a compatible GPU and CUDA installed
-google-generativeai
+# google-generativeai
 langchain-text-splitters
+google-genai

@@ -8,7 +8,8 @@ class Config:
     """
     Configuration class to manage environment variables and settings.
     """
-    GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+    # GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+    GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
 
     if not GEMINI_API_KEY:
         raise ValueError("GEMINI_API_KEY not found in environment variables. "
