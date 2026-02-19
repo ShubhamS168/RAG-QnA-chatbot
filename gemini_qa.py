@@ -132,7 +132,8 @@ Answer:
             # )
             # return response.text
             response = self.client.models.generate_content(
-                model="gemini-1.5-flash",
+                # model="gemini-1.5-flash",
+                model="gemini-1.0-pro",
                 contents=full_prompt
             )
 
