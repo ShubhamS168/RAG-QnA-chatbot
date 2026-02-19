@@ -155,10 +155,14 @@ else:
             with st.spinner("Retrieving context and generating answer..."):
                 try:
                     contexts = retriever.retrieve_context(
-                        query=question,
-                        faiss_index=st.session_state.faiss_index,
-                        text_chunks=st.session_state.processed_chunks,
-                        k=Config.TOP_K_RETRIEVAL,
+                        # query=question,
+                        # faiss_index=st.session_state.faiss_index,
+                        # text_chunks=st.session_state.processed_chunks,
+                        # k=Config.TOP_K_RETRIEVAL,
+                        question,
+                        st.session_state.faiss_index,
+                        st.session_state.processed_chunks,
+                        Config.TOP_K_RETRIEVAL,
                     )
 
                     if show_context:
