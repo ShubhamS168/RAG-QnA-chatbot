@@ -201,7 +201,8 @@ Answer:
         try:
             # ✅ This EXACTLY matches your working curl request
             response = self.client.models.generate_content(
-                model="gemini-2.0-flash",
+                # model="gemini-2.0-flash",
+                model="models/gemini-pro",
                 contents=[
                     {
                         "role": "user",
