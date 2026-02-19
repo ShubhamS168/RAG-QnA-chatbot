@@ -82,6 +82,82 @@
 
 
 
+#2
+
+# from google import genai
+# import streamlit as st
+# from typing import List
+
+
+# class GeminiQA:
+#     """
+#     Handles interaction with the Google Gemini model for question answering.
+#     """
+
+#     def __init__(self):
+#         try:
+#             if "GEMINI_API_KEY" not in st.secrets:
+#                 raise RuntimeError("GEMINI_API_KEY not found in Streamlit secrets")
+
+#             self.client = genai.Client(
+#                 api_key=st.secrets["GEMINI_API_KEY"]
+#             )
+
+#         except Exception as e:
+#             raise RuntimeError(f"Failed to initialize Gemini client: {e}")
+
+#     def generate_answer(self, question: str, context: List[str]) -> str:
+#         if not context:
+#             return (
+#                 "I don't have enough information in the provided documents to answer that question. "
+#                 "Please upload relevant documents."
+#             )
+
+#         context_str = "\n\n".join(context)
+
+#         full_prompt = f"""
+# You are an intelligent assistant. Use the context below to answer the question accurately.
+
+# Context:
+# {context_str}
+
+# Question:
+# {question}
+
+# Answer:
+# """
+
+#         try:
+#             # response = self.client.models.generate_content(
+#             #     model="gemini-1.5-flash",
+#             #     contents=full_prompt
+#             # )
+#             # return response.text
+            
+#             response = self.client.models.generate_content(
+#                 model="models/gemini-pro",
+#                 contents=[full_prompt]
+#             )
+
+#             if hasattr(response, "text") and response.text:
+#                 return response.text
+
+#             # Fallback for new response structure
+#             return response.candidates[0].content.parts[0].text
+
+
+#         except Exception as e:
+#             # print(f"Error generating answer with Gemini: {e}")
+#             # return "An error occurred while generating the answer. Please try again."
+            
+#             import traceback
+#             error_details = traceback.format_exc()
+#             return f"❌ Gemini error:\n{error_details}"
+
+
+
+
+
 from google import genai
 import streamlit as st
 from typing import List
@@ -93,16 +169,13 @@ class GeminiQA:
     """
 
     def __init__(self):
-        try:
-            if "GEMINI_API_KEY" not in st.secrets:
-                raise RuntimeError("GEMINI_API_KEY not found in Streamlit secrets")
+        if "GEMINI_API_KEY" not in st.secrets:
+            raise RuntimeError("GEMINI_API_KEY not found in Streamlit secrets")
 
-            self.client = genai.Client(
-                api_key=st.secrets["GEMINI_API_KEY"]
-            )
-
-        except Exception as e:
-            raise RuntimeError(f"Failed to initialize Gemini client: {e}")
+        # Initialize Gemini client
+        self.client = genai.Client(
+            api_key=st.secrets["GEMINI_API_KEY"]
+        )
 
     def generate_answer(self, question: str, context: List[str]) -> str:
         if not context:
@@ -113,7 +186,7 @@ class GeminiQA:
 
         context_str = "\n\n".join(context)
 
-        full_prompt = f"""
+        prompt = f"""
 You are an intelligent assistant. Use the context below to answer the question accurately.
 
 Context:
@@ -126,29 +199,21 @@ Answer:
 """
 
         try:
-            # response = self.client.models.generate_content(
-            #     model="gemini-1.5-flash",
-            #     contents=full_prompt
-            # )
-            # return response.text
-            
+            # ✅ This EXACTLY matches your working curl request
             response = self.client.models.generate_content(
-                model="models/gemini-pro",
-                contents=[full_prompt]
+                model="gemini-2.0-flash",
+                contents=[
+                    {
+                        "role": "user",
+                        "parts": [
+                            {"text": prompt}
+                        ]
+                    }
+                ]
             )
 
-            if hasattr(response, "text") and response.text:
-                return response.text
-
-            # Fallback for new response structure
             return response.candidates[0].content.parts[0].text
 
-
         except Exception as e:
-            # print(f"Error generating answer with Gemini: {e}")
-            # return "An error occurred while generating the answer. Please try again."
-            
             import traceback
-            error_details = traceback.format_exc()
-            return f"❌ Gemini error:\n{error_details}"
-
+            return f"❌ Gemini error:\n{traceback.format_exc()}"
